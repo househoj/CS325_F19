@@ -6,7 +6,7 @@ void stooge_sort(int*, int, int);
 int main(int argc, char* argv[]) {
 	int n = 0;
 	std::ifstream myfile;
-	myfile.open("data.txt");
+	myfile.open(argv[1]);
 	myfile >> n;
 
 	int* arr = new int[n];
@@ -14,14 +14,13 @@ int main(int argc, char* argv[]) {
 	for (int i = 0; i < n; i++) {
 		myfile >> arr[i];
 	}
-	int s = (sizeof(arr) * n) / sizeof(arr[0]);
+  stooge_sort(arr, 0, n - 1);
 
-	stooge_sort(arr, 0, s - 1);
-
-	for (int i = 0; i < s; i++) {
+  for (int i = 0; i < n; i++) {
 		std::cout << arr[i] << " ";
 	}
-	delete[] arr;
+ std::cout << std::endl;
+  myfile.close();
 	return 0;
 	
 }
