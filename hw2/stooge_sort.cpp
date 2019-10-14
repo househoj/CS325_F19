@@ -1,28 +1,35 @@
 #include <iostream>
 #include <fstream>
+#include <time.h>
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 void stooge_sort(int*, int, int);
 
 int main(int argc, char* argv[]){
     int n = 0;
-    std::ifstream myfile;
-    myfile.open(argv[1]);
-    myfile >> n;
+    std::ifstream infile;
+    std::ofstream outfile;
+    outfile.open("stooge.txt");
+    infile.open(argv[1]);
+    infile >> n;
     
     int* arr = new int[n];
     
     for(int i = 0; i < n; i++){
-        myfile >> arr[i];
+        infile >> arr[i];
     }
-	
     stooge_sort(arr, 0, n - 1);
     
     for(int i = 0; i < n; i++){
         std::cout << arr[i] << " ";
+        outfile << arr[i] << " ";
     }
     
     std::cout << std::endl;
-    myfile.close();
+    infile.close();
+    outfile.close();
     return 0;
 }
 
