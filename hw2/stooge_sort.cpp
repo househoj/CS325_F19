@@ -14,15 +14,14 @@ int main(int argc, char* argv[]) {
 	for (int i = 0; i < n; i++) {
 		myfile >> arr[i];
 	}
-  stooge_sort(arr, 0, n - 1);
+	stooge_sort(arr, 0, n - 1);
 
-  for (int i = 0; i < n; i++) {
-		std::cout << arr[i] << " ";
+	for (int i = 0; i < n; i++) {
+			std::cout << arr[i] << " ";
 	}
- std::cout << std::endl;
-  myfile.close();
+	std::cout << std::endl;
+	myfile.close();
 	return 0;
-	
 }
 
 void stooge_sort(int arr[], int first, int last) {
