@@ -12,12 +12,12 @@ int main(int argc, char* argv[]) {
 	int* arr = new int[n];
 
 	for (int i = 0; i < n; i++) {
-		myfile >> arr[i];
+	    myfile >> arr[i];
 	}
 	stooge_sort(arr, 0, n - 1);
 
 	for (int i = 0; i < n; i++) {
-			std::cout << arr[i] << " ";
+		std::cout << arr[i] << " ";
 	}
 	std::cout << std::endl;
 	myfile.close();
