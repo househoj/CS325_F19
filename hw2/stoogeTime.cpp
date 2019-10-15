@@ -15,6 +15,7 @@ int main(){
     outfile.open("times.txt");
 
     for(int i = 500; i <= 1500; i = i+100){
+        outfile << i << " ";
         total = 0;
         average = 0;
         std::cout << "i: " << i << std::endl;
@@ -32,10 +33,11 @@ int main(){
             float seconds = diff / CLOCKS_PER_SEC;
             total = total + seconds;
             std::cout << seconds << "s" << std::endl;
+            outfile << " " << seconds << " , ";
         }
         average = total / 3;
         std::cout << "Average: " << average << std::endl;
-        outfile << average << " ";
+        outfile << " " << average << " , " << std::endl;
     }
     outfile.close();
     std::cout << std::endl;
